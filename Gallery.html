@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - My School</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>My Secondary School</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+</header>
+
+<section class="gallery">
+    <h2>School Gallery</h2>
+
+    <div class="gallery-container">
+        <img src="image10.jpeg" onclick="openImage(this)">
+        <img src="image9.jpeg" onclick="openImage(this)">
+        <img src="image8.jpeg" onclick="openImage(this)">
+        <img src="image7.jpeg" onclick="openImage(this)">
+        <img src="image6.jpeg" onclick="openImage(this)">
+        <img src="image5.jpeg" onclick="openImage(this)">
+        <img src="image4.jpeg" onclick="openImage(this)">
+        <img src="image3.jpeg" onclick="openImage(this)">
+        <img src="image2.jpeg" onclick="openImage(this)">
+    </div>
+</section>
+
+<!-- Full Image View -->
+<div id="imageModal" class="modal" onclick="closeImage()">
+    <img id="modalImg">
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+<footer>
+    <p>© 2026 Luzira Secondary School</p>
+
+    <div class="social-links">
+        <a href="https://facebook.com/your-school" target="_blank">Facebook</a>
+        <a href="https://twitter.com/your-school" target="_blank">Twitter</a>
+        <a href="https://instagram.com/your-school" target="_blank">Instagram</a>
+        <a href="https://wa.me/256700000000" target="_blank">WhatsApp</a>
+    </div>
+</footer>
+</html>
