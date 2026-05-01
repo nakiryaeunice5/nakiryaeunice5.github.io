@@ -1,6 +1,6 @@
 
 if (window.location.pathname.includes("index.html")) {
-    alert("Welcome to My School Website!");
+    alert("Welcome to Luzira Secondary School Website!");
 }
 
   function validateForm(event) {
