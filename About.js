@@ -1,4 +1,7 @@
-alert("Welcome to My School Website!");
+
+if (window.location.pathname.includes("index.html")) {
+    alert("Welcome to My School Website!");
+}
 
   function validateForm(event) {
     const name = document.querySelector('input[name="fullname"]');
@@ -24,16 +27,6 @@ alert("Welcome to My School Website!");
     }
 
     return true;
-}
-
-function showContent(type) {
-    let content = document.getElementById("content");
-
-    if (type === "olevel") {
-        content.innerHTML = "<h3>O-Level Subjects</h3><p>Math, English, Biology...</p>";
-    } else {
-        content.innerHTML = "<h3>A-Level Combinations</h3><p>PCM, BCM, MEG...</p>";
-    }
 }
 
 function showContent(type) {
