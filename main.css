@@ -134,3 +134,14 @@ nav a:hover {
 .social-links a:hover {
     color: yellow;
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-image: url("../images/background.jpg");
+    background-size: cover;       /* makes it fill the screen */
+    background-position: center;  /* centers the image */
+    background-repeat: no-repeat; /* prevents repeating */
+    background-attachment: fixed; /* creates a nice scrolling effect */
+}
