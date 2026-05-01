@@ -145,3 +145,10 @@ body {
     background-repeat: no-repeat; /* prevents repeating */
     background-attachment: fixed; /* creates a nice scrolling effect */
 }
+
+.gallery-container video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
