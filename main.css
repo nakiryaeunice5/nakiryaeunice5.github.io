@@ -135,15 +135,38 @@ nav a:hover {
     color: yellow;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
 
-    background-image: url("../images/background.jpg");
-    background-size: cover;       /* makes it fill the screen */
-    background-position: center;  /* centers the image */
-    background-repeat: no-repeat; /* prevents repeating */
-    background-attachment: fixed; /* creates a nice scrolling effect */
+/* Hide images by default */
+.mySlides {
+    display: none;
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
 }
 
 .gallery-container video {
