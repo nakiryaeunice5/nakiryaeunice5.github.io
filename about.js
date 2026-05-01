@@ -71,3 +71,31 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+
+// List all  image filenames 
+const imageList = [
+    "image7.jpeg", "image2.jpeg", "image3.jpeg", "image8.jpeg", "image9.jpeg", "image10.jpeg",
+    "image4.jpeg", "image5.jpeg", "image6.jpeg",
+    // Add images
+];
+
+const slideshowContainer = document.querySelector('.slideshow-container');
+
+// This function automatically creates the HTML for every image in your list
+function generateSlides() {
+    imageList.forEach((imgSrc, index) => {
+        let slideDiv = document.createElement('div');
+        slideDiv.className = "mySlides fade";
+        
+        slideDiv.innerHTML = `
+            <div class="numbertext">${index + 1} / ${imageList.length}</div>
+            <img src="images/${imgSrc}" style="width:100%">
+        `;
+        
+        slideshowContainer.appendChild(slideDiv);
+    });
+}
+
+// Run the generator, then start the animation
+generateSlides();
+showSlides();
