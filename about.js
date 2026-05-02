@@ -58,7 +58,7 @@ function closeImage() {
 }
 
 let slideIndex = 0;
-showSlides();
+
 
 function showSlides() {
   let i;
