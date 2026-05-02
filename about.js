@@ -89,7 +89,7 @@ function generateSlides() {
         
         slideDiv.innerHTML = `
             <div class="numbertext">${index + 1} / ${imageList.length}</div>
-            <img src="images/${imgSrc}" style="width:100%">
+            <img src="${imgSrc}" style="width:100%">
         `;
         
         slideshowContainer.appendChild(slideDiv);
