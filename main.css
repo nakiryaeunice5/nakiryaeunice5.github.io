@@ -4,18 +4,116 @@ body {
     padding: 0;
 }
 
-header {
-    background: #004080;
-    color: white;
-    padding: 15px;
-    text-align: center;
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: navy;
+  padding: 15px 40px;
+  flex-wrap: wrap; /* Allows items to wrap on small screens */
+  gap: 10px;
+    position: sticky;
+    top: 0;
+    
+    
 }
 
-nav a {
-    margin: 10px;
-    color: white;
-    text-decoration: none;
+/* LOGO + NAME SIDE BY SIDE */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
+
+/* LOGO */
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+    border-radius: 80px; 
+}
+
+/* SCHOOL NAME */
+.school-name {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* MOTTO */
+.motto {
+  color: gold;
+  font-size: 13px;
+  margin: 3px 0 0 0;
+  font-style: italic;
+}
+
+/* NAVIGATION */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Nav links wrap instead of overflowing */
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: gold;
+  border-bottom: 2px solid gold;
+  padding-bottom: 3px;
+}
+
+/* ---- TABLET (max 768px) ---- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack logo and nav vertically */
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .brand {
+    flex-direction: column; /* Stack logo above school name */
+  }
+
+  .school-name {
+    font-size: 20px;
+  }
+
+  .navbar ul {
+    justify-content: center; /* Center the nav links */
+    gap: 15px;
+  }
+}
+
+/* ---- PHONE (max 480px) ---- */
+@media (max-width: 480px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .school-name {
+    font-size: 17px;
+  }
+
+  .motto {
+    font-size: 11px;
+  }
+
+  .navbar a {
+    font-size: 13px;
+  }
+}
+
 
 .hero {
     background: lightblue;
