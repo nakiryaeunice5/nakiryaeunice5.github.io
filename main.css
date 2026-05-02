@@ -1,188 +1,328 @@
+/* ================================
+   BASE
+================================ */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ================================
+   HEADER
+================================ */
+.header {
+    background-color: navy;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid gold;
+    box-shadow: 0 4px 10px darkblue;
+}
+
+/* BRAND — logo + school name */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid gold;
+}
+
+.school-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.school-name {
+    color: gold;
+    font-size: 22px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.motto {
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+    margin: 3px 0 0 0;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
     margin: 0;
     padding: 0;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: navy;
-  padding: 15px 40px;
-  flex-wrap: wrap; /* Allows items to wrap on small screens */
-  gap: 10px;
-    position: sticky;
-    top: 0;
-    
-    
-}
-
-/* LOGO + NAME SIDE BY SIDE */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-/* LOGO */
-.logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-    border-radius: 80px; 
-}
-
-/* SCHOOL NAME */
-.school-name {
-  color: white;
-  font-size: 24px;
-  margin: 0;
-}
-
-/* MOTTO */
-.motto {
-  color: gold;
-  font-size: 13px;
-  margin: 3px 0 0 0;
-  font-style: italic;
-}
-
-/* NAVIGATION */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap; /* Nav links wrap instead of overflowing */
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.navbar a:hover {
-  color: gold;
-  border-bottom: 2px solid gold;
-  padding-bottom: 3px;
-}
-
-/* ---- TABLET (max 768px) ---- */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column; /* Stack logo and nav vertically */
-    text-align: center;
-    padding: 15px 20px;
-  }
-
-  .brand {
-    flex-direction: column; /* Stack logo above school name */
-  }
-
-  .school-name {
-    font-size: 20px;
-  }
-
-  .navbar ul {
-    justify-content: center; /* Center the nav links */
-    gap: 15px;
-  }
-}
-
-/* ---- PHONE (max 480px) ---- */
-@media (max-width: 480px) {
-  .logo {
-    width: 60px;
-    height: 60px;
-  }
-
-  .school-name {
-    font-size: 17px;
-  }
-
-  .motto {
-    font-size: 11px;
-  }
-
-  .navbar a {
-    font-size: 13px;
-  }
-}
-
-
-.hero {
-    background: lightblue;
-    padding: 50px;
-    text-align: center;
-}
-
-footer {
-    background: #222;
+.navbar ul li a {
     color: white;
-    text-align: center;
-    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 4px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.navbar ul li a:hover {
+    background-color: gold;
+    color: navy;
+}
+
+.active {
+    background-color: gold;
+    color: navy !important;
+    border-radius: 4px;
+}
+
+/* ================================
+   SECTIONS — shared across all pages
+================================ */
+section {
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 4px solid gold;
+    border-left: 4px solid navy;
+    box-shadow: 0 4px 15px lightgray;
+    animation: slideUp 0.8s ease-out both;
+}
+
+section h2 {
+    color: navy;
+    border-bottom: 2px solid gold;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+section h3 {
+    color: navy;
+    margin-bottom: 10px;
+}
+
+section p {
+    color: dimgray;
+    line-height: 1.8;
+}
+
+section ul, section ol {
+    color: dimgray;
+    line-height: 2;
+    margin-left: 20px;
+}
+
+/* ================================
+   HERO — index.html
+================================ */
+.hero {
+    background-color: navy;
+    color: white;
+    padding: 60px 30px;
+    text-align: center;
+    border-top: 4px solid gold;
+    border-bottom: 4px solid gold;
+    margin: 0;
+    max-width: 100%;
+    border-left: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hero h2 {
+    color: gold;
+    font-size: 30px;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: white;
+    font-size: 16px;
+}
+
+/* ================================
+   SLIDESHOW — index.html
+================================ */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 4px solid gold;
+    box-shadow: 0 4px 15px lightgray;
+}
+
+.mySlides {
+    display: none;
+}
+
+.numbertext {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: white;
+    background-color: navy;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+/* ================================
+   ABOUT PAGE
+================================ */
 .about, .mission, .vision, .values, .history {
-    padding: 20px;
+    padding: 10px;
 }
 
 .values ul {
     list-style-type: square;
-}
-.academics, .olevel, .alevel, .departments, .assessment {
-    padding: 20px;
+    color: navy;
 }
 
-ul {
-    margin-left: 20px;
+/* ================================
+   ACADEMICS PAGE
+================================ */
+.academics, .olevel, .alevel, .departments, .assessment {
+    padding: 10px;
 }
+
+#content {
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    border-top: 4px solid navy;
+    border-left: 4px solid gold;
+    box-shadow: 0 4px 15px lightgray;
+    color: dimgray;
+    display: none; /* Hidden until button clicked */
+}
+
+#content h3 {
+    color: navy;
+}
+
+/* Academics buttons */
+.academics-buttons {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+button {
+    background-color: navy;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: gold;
+    color: navy;
+}
+
+/* ================================
+   ADMISSIONS PAGE
+================================ */
 .admissions, .requirements, .process, .form-section {
-    padding: 20px;
+    padding: 10px;
+}
+
+form label {
+    color: navy;
+    font-weight: bold;
 }
 
 form input, form select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
 }
 
-button {
-    background: #004080;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+form input:focus, form select:focus {
+    border-color: navy;
 }
+
+/* ================================
+   CONTACT PAGE
+================================ */
 .contact, .contact-info, .contact-form {
-    padding: 20px;
+    padding: 10px;
 }
 
 textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: navy;
 }
 
 .contact-info p {
-    margin: 5px 0;
+    margin: 8px 0;
+    color: dimgray;
 }
 
-nav a:hover {
-    background: white;
-    color: #004080;
-    padding: 5px;
+.contact-info strong {
+    color: navy;
 }
 
-.active {
-    border-bottom: 2px solid yellow;
-}
-
+/* ================================
+   GALLERY PAGE
+================================ */
 .gallery {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -190,6 +330,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
+    margin-top: 15px;
 }
 
 .gallery-container img {
@@ -198,9 +339,25 @@ nav a:hover {
     object-fit: cover;
     cursor: pointer;
     border-radius: 5px;
+    border: 3px solid white;
+    transition: border 0.3s ease, transform 0.3s ease;
 }
 
-/* Modal (popup image) */
+.gallery-container img:hover {
+    border: 3px solid gold;
+    transform: scale(1.03);
+}
+
+.gallery-container video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ================================
+   MODAL — gallery popup
+================================ */
 .modal {
     display: none;
     position: fixed;
@@ -208,14 +365,35 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background:black;
+    background-color: navy;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 .modal img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 85%;
+    max-height: 85%;
+    border: 4px solid gold;
+    border-radius: 8px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-top: 4px solid gold;
+    margin-top: 30px;
+}
+
+footer p {
+    color: lightgray;
+    margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .social-links {
@@ -226,50 +404,102 @@ nav a:hover {
     margin: 0 10px;
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
 .social-links a:hover {
-    color: yellow;
+    color: gold;
+    transform: scale(1.2);
 }
 
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
+/* ================================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-/* Hide images by default */
-.mySlides {
-    display: none;
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to   { opacity: 1; }
 }
 
-/* Fade animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+/* ================================
+   RESPONSIVE — TABLET
+================================ */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .brand {
+        flex-direction: column;
+    }
+
+    .school-name {
+        font-size: 18px;
+    }
+
+    .navbar ul {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 20px;
+    }
 }
 
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
-}
+/* ================================
+   RESPONSIVE — PHONE
+================================ */
+@media (max-width: 480px) {
+    .school-name {
+        font-size: 15px;
+    }
 
-.gallery-container video {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navbar ul li a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    button {
+        width: 100%;
+    }
 }
